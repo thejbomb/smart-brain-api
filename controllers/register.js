@@ -32,6 +32,9 @@ const handleRegister = (req, res, db, bcrypt) => {
           .then(trx.commit)
           .catch(trx.rollback)
 
+          // send email confirmation
+          .then(sendEmail(email, name, password))
+          .catch(err => console.log(err))
         })
         .catch(err => res.status(400).json('unable to register'))
     });
