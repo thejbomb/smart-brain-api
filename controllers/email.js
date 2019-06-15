@@ -26,7 +26,7 @@ module.exports = async (receiver, name, password) => {
     from: process.env.EMAIL_USERNAME,
     to: receiver,
     subject: 'Email confirmation',
-    text: `Hello ${name}, \nThank you for registering for https://facereq-smart-brain.herokuapp.com/.
+    text: `Hello ${name}, \nThank you for registering to https://facereq-smart-brain.herokuapp.com/.
     \nYour account password is ${password}.`
   })
 
