@@ -9,8 +9,8 @@ const credentials = {
     ciphers: 'SSLv3'
   },
   auth: {
-    user: 'face-req-confirm@outlook.com', 
-    pass: '159aobp159aobp',  
+    user: process.env.EMAIL_USERNAME, 
+    pass: process.env.EMAIL_PASSWORD,  
   }
 }
 
@@ -23,10 +23,11 @@ const transporter = nodemailer.createTransport(credentials)
 module.exports = async (receiver, name, password) => {
 
   await transporter.sendMail({
-    from: 'face-req-confirm@outlook.com',
+    from: process.env.EMAIL_USERNAME,
     to: receiver,
     subject: 'Email confirmation',
-    text: `Hello ${name}, your password for https://facereq-smart-brain.herokuapp.com/ is ${password}.`
+    text: `Hello ${name}, \nThank you for registering for https://facereq-smart-brain.herokuapp.com/.
+    \nYour account password is ${password}.`
   })
 
 }
