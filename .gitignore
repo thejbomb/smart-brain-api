@@ -6,7 +6,7 @@
 .pnp.js
 
 #development
-/local
+/local.txt
 /postgres
 /Dockerfile
 /docker-compose.yml
