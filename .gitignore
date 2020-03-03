@@ -5,6 +5,13 @@
 /.pnp
 .pnp.js
 
+#development
+/local
+/postgres
+/Dockerfile
+/docker-compose.yml
+/.dockerignore
+
 # testing
 /coverage
 

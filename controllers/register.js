@@ -9,7 +9,7 @@ const handleRegister = (req, res, db, bcrypt) => {
   }
 
   bcrypt.genSalt(saltRounds, function(err, salt) {
-    bcrypt.hash(password, salt, function(err, hash) {
+    bcrypt.hash(password, salt, null, function(err, hash) {
         db.transaction(trx => {
           trx.insert({
             hash: hash,
